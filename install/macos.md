@@ -49,6 +49,15 @@ xcode-select --install
 ```
 Danach "Installieren" auswählen und warten. Der Download wiegt etwa 130MB.
 
+### Git einstellen:
+Im Terminal (<span style="color: red;">__Eigene Daten eintragen!!!__</span>):
+
+    git config --global user.name "Max Mustermann"
+    git config --global user.email "max.mustermann@udo.edu"
+    git config --global rebase.stat true
+    git config --global merge.conflictstyle diff3
+
+
 ### Anaconda
 
 - [Anaconda](https://www.anaconda.com/products/individual#Downloads): Python und
@@ -60,7 +69,7 @@ __Wichtig__: Wir wollen Python 3.8 Graphical Installer (unten auf der Seite).  D
 
 - [VS Codium](https://github.com/VSCodium/vscodium/releases): Texteditor.
    Download der Datei `VsCodium-darwin-<VERSION>.zip`.
-   Das Programm "VSCodium.app" befindet sich dann in der zip Datei im Downloadordner und muss nach `Programme` verschoben werden. Die App öffnen und mit `Shift+cmd+p` die Kommando Palette öffnen und `Shell Command: Install 'code' command in PATH` ausführen. Nun wird VS Code auch geöffnet, wenn im Terminal "code" eingeben wird.
+   Das Programm "VSCodium.app" befindet sich dann in der zip Datei im Downloadordner und muss nach `Programme` verschoben werden. Die App öffnen und mit `Shift+cmd+p` die Kommando Palette öffnen und `Shell Command: Install 'codium' command in PATH` ausführen. Nun wird VS Codium auch geöffnet, wenn im Terminal "codium" eingeben wird.
 
 Um git beizubringen, VSCodium zu benutzen, Im Terminal:
 
@@ -68,19 +77,25 @@ Um git beizubringen, VSCodium zu benutzen, Im Terminal:
 git config --global core.editor "codium --wait"
 ```
 
-- Damit VS Code LaTeX-Code besser darstellen kann, muss das Plugin `LaTeX language support`
-  installiert werden
+- Damit VS Code LaTeX-Code besser darstellen kann, muss das Plugin `LaTeX Workshop`
+  installiert werden:
     - Mit `Shift+cmd+x` die Extensions öffnen
-    - `LaTeX language support` suchen
+    - `LaTeX Workshop` suchen
     - `install` anklicken
-    - VS Code neustarten
+    - VS Codium neustarten
+
+- Um LaTeX Workshop für für uns richtig einzustellen:
+    - Settings aufrufen `File -> Preferences -> Settings`
+    - Hacken bei `latex auto build clean and retry` entfernen
+    - Bei `latex auto build run` im Drop-Down-Menü `never` aufwählen
+
 
 ### Uncertainties
 
 - [Uncertainties](http://pythonhosted.org/uncertainties/): Python-Bibliothek
   für automatisierte Fehlerrechnung
 
-Im terminal:
+Im Terminal:
 
     pip install uncertainties
 
@@ -104,12 +119,6 @@ Terminal öffnen
 
 Es sollte die Git-Hilfe erscheinen.
 
-Git einstellen: im Terminal (<span style="color: red;">__Eigene Daten eintragen!!!__</span>):
-
-    git config --global user.name "Max Mustermann"
-    git config --global user.email "max.mustermann@udo.edu"
-    git config --global rebase.stat true
-    git config --global merge.conflictstyle diff3
 
 ### Python
 
@@ -151,7 +160,7 @@ Im Terminal:
 
 Es sollte folgende Ausgabe erscheinen:
 
-    This is LuaTeX, Version 1.0.7 (TeX Live 2018)
+    This is LuaTeX, Version 1.X.X (TeX Live 2020)
     restricted system commands enabled.
     **
 
@@ -190,7 +199,7 @@ Im Terminal:
 
 Im Terminal:
 
-    pip install -U uncertainties
+    pip3 install -U uncertainties
 
 ### TeXLive
 
